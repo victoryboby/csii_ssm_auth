@@ -1,6 +1,7 @@
 package cn.com.csii.service.impl;
 
 import cn.com.csii.dao.UserDao;
+import cn.com.csii.domain.Role;
 import cn.com.csii.domain.UserInfo;
 import cn.com.csii.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +28,15 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        User user = new User(userInfo.getUsername(), "{noop}"+userInfo.getPassword(),getAuthority());
+//        User user = new User(userInfo.getUsername(), "{noop}"+userInfo.getPassword(),getAuthority(userInfo.getRoles()));
+        User user = new User(userInfo.getUsername(), "{noop}"+userInfo.getPassword(),userInfo.getStatus()==0?false:true,true,true,true,getAuthority(userInfo.getRoles()));
         return user;
     }
-    public List<SimpleGrantedAuthority> getAuthority(){
+    public List<SimpleGrantedAuthority> getAuthority(List<Role> roles){
         List<SimpleGrantedAuthority> list = new ArrayList<>();
-        list.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-        list.add(new SimpleGrantedAuthority("ROLE_USER"));
+        for (Role role : roles){
+            list.add(new SimpleGrantedAuthority("ROLE_"+role.getRoleName()));
+        }
         return list;
     }
 }

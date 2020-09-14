@@ -1,0 +1,7 @@
+cn\com\csii\dao\PermissionDao.class
+cn\com\csii\dao\ProductDao.class
+cn\com\csii\dao\OrderDao.class
+cn\com\csii\dao\TravellerDao.class
+cn\com\csii\dao\UserDao.class
+cn\com\csii\dao\RoleDao.class
+cn\com\csii\dao\MemberDao.class

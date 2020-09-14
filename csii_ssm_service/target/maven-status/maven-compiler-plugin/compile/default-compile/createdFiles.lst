@@ -1,0 +1,10 @@
+cn\com\csii\service\impl\PerServiceImpl.class
+cn\com\csii\service\impl\UserServiceImpl.class
+cn\com\csii\service\OrderService.class
+cn\com\csii\service\PerService.class
+cn\com\csii\service\impl\RoleServiceImpl.class
+cn\com\csii\service\ProductService.class
+cn\com\csii\service\RoleService.class
+cn\com\csii\service\impl\OrderServiceImpl.class
+cn\com\csii\service\impl\ProductServiceImpl.class
+cn\com\csii\service\UserService.class

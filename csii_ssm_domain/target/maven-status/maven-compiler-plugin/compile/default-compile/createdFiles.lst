@@ -1,0 +1,7 @@
+cn\com\csii\domain\Permission.class
+cn\com\csii\domain\Traveller.class
+cn\com\csii\domain\Role.class
+cn\com\csii\domain\UserInfo.class
+cn\com\csii\domain\Member.class
+cn\com\csii\domain\Product.class
+cn\com\csii\domain\Order.class

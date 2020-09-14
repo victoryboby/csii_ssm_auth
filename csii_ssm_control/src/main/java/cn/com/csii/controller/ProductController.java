@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @Controller
@@ -15,6 +16,8 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductService productService;
+
+    @RolesAllowed("ADMIN")
     @RequestMapping("/findAll.do")
     public ModelAndView findall() throws Exception{
         ModelAndView mv = new ModelAndView();

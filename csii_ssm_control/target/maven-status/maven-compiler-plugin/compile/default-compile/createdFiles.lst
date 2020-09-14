@@ -1,0 +1,5 @@
+cn\com\csii\controller\PermissionController.class
+cn\com\csii\controller\OrderController.class
+cn\com\csii\controller\RoleController.class
+cn\com\csii\controller\UserController.class
+cn\com\csii\controller\ProductController.class

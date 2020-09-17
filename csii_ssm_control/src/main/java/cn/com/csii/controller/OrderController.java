@@ -4,12 +4,16 @@ import cn.com.csii.domain.Order;
 import cn.com.csii.service.OrderService;
 import cn.com.csii.service.ProductService;
 import com.github.pagehelper.PageInfo;
+import org.aspectj.lang.JoinPoint;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.lang.reflect.Method;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -19,12 +23,14 @@ public class OrderController {
     private OrderService orderService;
 
     @RequestMapping("/findAll.do")
+//    @Secured("ROLE_ADMIN")
     public ModelAndView findOrder(@RequestParam(name = "page",required = true) Integer pageNum,@RequestParam(name = "pageSize",required = true) Integer pageSize) throws Exception{
         ModelAndView mv = new ModelAndView();
         List<Order> ods = orderService.findAll(pageNum,pageSize);
         PageInfo pageInfo = new PageInfo(ods);
         mv.addObject("pageInfo",pageInfo);
         mv.setViewName("orders-list");
+//        Method a
 
         return mv;
     }

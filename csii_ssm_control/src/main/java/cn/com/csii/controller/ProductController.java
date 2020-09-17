@@ -16,8 +16,8 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductService productService;
-
-    @RolesAllowed("ADMIN")
+ //jsr-250注解：表示哪些角色可以访问，可以省略角色前缀
+//    @RolesAllowed("ADMIN")
     @RequestMapping("/findAll.do")
     public ModelAndView findall() throws Exception{
         ModelAndView mv = new ModelAndView();

@@ -19,6 +19,10 @@
     <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
   </listener>
 
+  <error-page>
+    <error-code>403</error-code>
+    <location>/error/error403.jsp</location>
+  </error-page>
 <!--  配置springSecurityFilterChain，该处为必须项-->
   <filter>
     <filter-name>springSecurityFilterChain</filter-name>

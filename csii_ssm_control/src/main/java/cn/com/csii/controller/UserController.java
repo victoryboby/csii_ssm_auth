@@ -5,6 +5,7 @@ import cn.com.csii.domain.UserInfo;
 import cn.com.csii.service.RoleService;
 import cn.com.csii.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,6 +22,8 @@ public class UserController {
     @Autowired
     private RoleService roleService;
 
+
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping("/findAll")
     public ModelAndView findAll() throws Exception{
         ModelAndView mv = new ModelAndView();
@@ -29,7 +32,7 @@ public class UserController {
         mv.setViewName("user-list");
         return mv;
     }
-
+//    @PreAuthorize("authentication.principal.username=='tom'")
     @RequestMapping("/save")
     public String saveUser(UserInfo userInfo) throws Exception{
         userService.saveUser(userInfo);
